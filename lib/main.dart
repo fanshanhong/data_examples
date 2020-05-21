@@ -89,13 +89,24 @@ class HomeState extends State<Home> {
         color: Colors.blueGrey[50],
         child: Column(
           children: <Widget>[
+            // 通过构造方法将数据传入下一个页面
             _buildButton('Simple sending data', ConstructorPage()),
+            // push.then(value)  value可以拿到上一个页面pop的数据
             _buildButton('Send and receive', DataBackPage()),
+            // InheritedWidget
             _buildButton('InheritedWidget', InheritedPage()),
+            // 封装了一个通用的(泛型的)的 InheritedWidget
             _buildButton('InheritedWidget generic', InheritedGenericPage()),
+
+            // InheritedWidget + Stream
             _buildButton('InheritedWidget and streams', InheritedStreamPage()),
+
+            // MyApp已经用InheritedProvider包围了MaterialApp, 然后在其子页面里面使用AppConfig
             _buildButton('Inherited AppConfig', AppConfigPage()),
+            // 将一些数据存在一个缓存(AppData类)中
             _buildButton('Singleton', AppDataPage()),
+
+
             _buildButton('Singleton BLoC', SingletonBlocPage()),
             _buildButton('Callbacks', CallbacksPage()),                        
           ],

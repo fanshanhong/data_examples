@@ -1,3 +1,4 @@
+/// 缓存类,用于存储一些数据
 class AppData {
   static final AppData _appData = new AppData._internal();
 

@@ -25,12 +25,16 @@ class DataBackPageState extends State<DataBackPage> {
   @override
   Widget build(BuildContext context) {
     _secondPage(BuildContext context, Widget page) async {
+      // 跳转到下一页面
+      // push是返回Future的.   直接 push().then(value)  value 就是下一个页面pop的数据, await也一样
       final dataFromSecondPage = await Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => page),
       ) as Data;
 
       // Here we have the data from the second screen
+
+      // 返回后, 拿到上一个页面的数据, 这里自动会build的, 不需要setState
 
       data.counter = dataFromSecondPage.counter;
       data.dateTime = dataFromSecondPage.dateTime;

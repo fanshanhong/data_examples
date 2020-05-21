@@ -62,6 +62,7 @@ class InheritedPageState extends State<InheritedPage> {
             ),
             Divider(),
             InheritedDataProvider(
+              // child里面就可以使用InheritedDataProvider里的data了
               child: InheritedDataWidget(),
               data: data,
             ),
@@ -108,6 +109,7 @@ class InheritedDataWidget extends StatelessWidget {
   }
 }
 
+// 子
 class InheritedDataWidgetChild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -131,6 +133,8 @@ class InheritedDataWidgetChild extends StatelessWidget {
   }
 }
 
+
+// 孙子
 class InheritedDataWidgetGrandchild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

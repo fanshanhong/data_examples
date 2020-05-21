@@ -15,6 +15,7 @@ class AppDataPageState extends State<AppDataPage> {
   @override
   Widget build(BuildContext context) {
 
+    // 拿到缓存中的数据
     textController.text = appData.text;
 
     return Scaffold(
@@ -33,6 +34,7 @@ class AppDataPageState extends State<AppDataPage> {
                   hintText: 'Insert some text',
                   border: OutlineInputBorder()),
               onChanged: (text) {
+                // 修改缓存数据
                 appData.text = text;
               },
             ),
@@ -66,6 +68,7 @@ class SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
 
+    // 新页面继续拿缓存数据
     textController.text = appData.text;
 
     return Scaffold(

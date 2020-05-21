@@ -16,6 +16,9 @@ class AppConfigPageState extends State<AppConfigPage> {
 
   @override
   Widget build(BuildContext context) {
+    // 从 InheritedWidget 中拿到数据
+    // 这里可以这么用, 是因为在main.dart中, MyApp已经用InheritedProvider包围了MaterialApp
+    // 如果其他页面再写个新的MaterialApp, 则这个AppConfig就不能用了.
     final appConfig = InheritedProvider.of<AppConfig>(context);
 
     textController.text = text;

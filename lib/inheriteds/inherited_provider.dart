@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 泛型的, 实质也是一个 InheritedWidget
 class InheritedProvider<T> extends InheritedWidget {
   final T inheritedData;  
 
